@@ -7,17 +7,23 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 
-	<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+	<!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script src="js/jquery.mobilemenu.js"></script>
 	<script>
 		$(document).ready(function(){
 			$('#responsive-menu').mobileMenu();
-			$( document ).tooltip();
+			$(document).tooltip();
+			$("button").button();
+			$("input[type=radio], input[type=checkbox]").checkboxradio();
+			$("#companysize, #hearaboutus").selectmenu();
 		});
 	</script>
 </head>
@@ -44,6 +50,7 @@
 		<section id="welcome" class="eleven columns">
 			<h4>Contact Us</h4>
 			<form name="contactform" action="http://www.vectacorp.com/vc/scripts/contactus.asp" method="post">
+				<div class="widget">
 				<fieldset>
 			    <legend>Contact a Sales Representative</legend>
 			    Name:
@@ -62,23 +69,24 @@
 			    <label for="vRetain"><input type="checkbox" name="product" value="vRetain" id="vRetain">vRetain 1.0</label>
 			    
 			    <br>
-			    What is your current infrastructure?<br>
+			    What is your current infrastructure? <br>
 			    <label for="Mac"><input type="radio" name="infrastructure" value="Mac" id="Mac">Mac</label>
 			    <label for="Linux"><input type="radio" name="infrastructure" value="Linux" id="Linux">Linux</label>
 			    <label for="Unix"><input type="radio" name="infrastructure" value="Unix" id="Unix">Unix</label>
 			    <label for="Windows"><input type="radio" name="infrastructure" value="Windows" id="Windows">Windows</label>
 
 			    <br>
-			    How many employees do you have?
-			    <select name="companysize">
+			    How many employees do you have? <br/>
+			    <select name="companysize" id="companysize">
                     <option value="1-10">1-10</option>
                     <option value="11-100">11-100</option>
                     <option value="101-1000">101-1000</option>
                     <option value="More than 1000">More than 1000</option>
 		        </select>
                 
-			    How did you hear about us?
-			    <select name="hearaboutus" multiple="" size="5">
+			    <br/>
+					How did you hear about us? <br/>
+			    <select name="hearaboutus" multiple="" size="5" id="hearaboutus">
                     <option value="Magazine Ad">Magazine Ad</option>
                     <option value="Radio Ad">Radio Ad</option>
                     <option value="TV Ad">TV Ad</option>
@@ -86,10 +94,11 @@
                     <option value="Other">Other</option>
 		        </select>
                 
-			    Questions or comments for our sales representatives?
+			    <br/> Questions or comments for our sales representatives? <br/>
 			    <textarea name="questions" size="30" rows="5"></textarea>
-			    <input type="submit" name="submit" value="Submit Now">
+			    <button>Submit Now</button>
 		    	</fieldset>
+					</div>
 			</form>
 	    </section>
 		
